@@ -75,7 +75,7 @@ The robot uses the following hardware components:
 
 ## Authors
 
-1º Year Students (2025-2026) of Group B, IT:
+1 Year Students (2025-2026) of Group B, IT:
  - Franz Petev (Hybrid/Integration team)
  - Ngangfor Amungwa (Hybrid/Integration team)
  - Kristian Endrev (Software team)

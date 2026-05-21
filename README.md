@@ -1,11 +1,40 @@
 # Project Innovate (2025-2026)
 
 ## Project Overview
+This repository contains the development process, research, testing, and implementation of our Innovate 2025–2026 project: an interactive campus robot capable of recognising basic human emotions through facial expression analysis.
 
+The goal of the project is to design and build a robot that can safely move around an indoor campus environment and interact with users in a simple and engaging way. Once activated through a trigger mechanism, the robot captures the user’s face using an integrated camera, analyses the detected facial expression, and responds through voice output
 
+The project combines several important areas within Information Technology, including:
+
+- Embedded systems
+- Hardware/software integration
+- Team-based development
+
+This repository documents the complete development process from planning and subsystem testing to the final integrated prototype.
+
+## Main Features
+The robot is intended to support the following core functionalities:
+
+- Safe indoor navigation (pre-planned)
+- Obstacle detection and avoidance
+- User-triggered interaction system
+- Camera with facial detection software
+- Basic emotion recognition
+- Visual and/or audio feedback responses
+- Integration between Raspberry Pi and Arduino systems
+
+## Initial Emotional Recognition Scope
+To maintain realistic project scope and improve system reliability, the first implementation focuses on recognising the following four emotions:
+
+- Happy
+- Neutral
+- Sad
+- Surprised
+
+Additional emotions may be added in future development stages if time allows.
 
 ## Hardware Used
-
 The robot uses the following hardware components:
 
 - Arduino-compatible microcontroller
@@ -34,44 +63,63 @@ The robot uses the following hardware components:
 |   Line Sensor Most Right  | A0  |
 |       Gripper Servo       | D12 |
 
-## Main Features
+## Proposed System Architecture
+The project follows a dual-controller architecture:
 
-### 1. Line Following
+|       Component      	|                 Main Responsibility                |
+|       ---------       |                 -------------------                |
+|      Raspberry Pi     |	Emotion recognition, camera processing, main logic |
+|        Arduino        |	     Motor control, sensors, movement handling     |
+| USB Serial Connection |	        Communication between both systems         |
 
-
-### 2. Dynamic Speed Adjustment
-
-
-### 3. Obstacle Detection
-
-
-### 4. Obstacle Avoidance
-
-
-### 5. LED Indicators
-
-
-### 6. Finish Line Detection
-
-
-## Final Race Code
-
+This structure separates high-level processing from real-time hardware control.
 
 ## Software / Library Requirements
+The following tools and libraries are required:
 
+| Tool / Library 	|              Purpose             |
+| --------------  |              -------             |
+|     Python     	|     Main programming language    |
+|     OpenCV      |	Camera access and face detection |
+|  FER / DeepFace	|       Emotion recognition        |
+|     PySerial	   |     Pi-Arduino communication     |
+|   Arduino IDE  	|  Arduino development environment |
+|     Arduino     |  C/C++	Motor and sensor control  |
+|      NumPy      |	      Numerical operations       |
 
-## Calibration / Tuning Notes
+Install Python dependencies in Command Prompt / Git Bash with:
+```
+pip install *dependency name* (example: opencv-python, fer, tensorflow, pyserial, numpy)
+```
 
+## Emotion Recognition Workflow
+The planned interaction workflow is:
 
-## Weekly Development Process
-
+1. Robot moves through environment
+2. User activates interaction mode
+3. Robot stops safely
+4. Camera captures user face
+5. Emotion recognition system analyses expression
+6. Robot responds through audio
+7. Robot resumes movement
 
 ## How To Run
-
+1. Install Python requirements
+2. Connect webcam
+3. Run the Python script:
+```
+python main.py
+```
+4. Present face to camera
+5. Emotion label will appear on screen
 
 
 ## Notes / Known Limitations
-
+- Emotion recognition accuracy depends heavily on lighting conditions
+- Camera angle and distance may affect detection reliability
+- The first prototype supports only a limited emotion set
+- Voice interaction may be implemented later depending on project progress
+- Battery duration may vary depending on motor load and processing usage
 
 ## Authors
 

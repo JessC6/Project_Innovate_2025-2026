@@ -86,6 +86,7 @@ The following tools and libraries are required:
 |   Arduino IDE  	|  Arduino development environment |
 |     Arduino     |  C/C++	Motor and sensor control  |
 |      NumPy      |	      Numerical operations       |
+|     pyttsx3     |       Text-to-speech output      |
 
 Install Python dependencies in Command Prompt / Git Bash with:
 ```

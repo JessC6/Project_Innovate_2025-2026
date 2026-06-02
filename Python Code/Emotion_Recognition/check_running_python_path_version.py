@@ -1,2 +1,4 @@
 import sys
-print(sys.executable)
+
+print("Python Version:", sys.version)
+print("Python Executable:", sys.executable)

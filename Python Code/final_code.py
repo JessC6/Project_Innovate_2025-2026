@@ -14,14 +14,12 @@ from anthropic import Anthropic
  Each person should change this following variable to state the correct location of the 
 .env file with the api key, relative to this file. 
 """
-load_dotenv(Path(__file__).resolve().parents[1] / ".env")
+load_dotenv()
 
 api_key = os.getenv("ANTHROPIC_API_KEY")
 
 if not api_key:
-    raise ValueError(
-        "ANTHROPIC_API_KEY not found in .env file"
-    )
+    raise ValueError("ANTHROPIC_API_KEY not found in .env file")
 
 client = Anthropic(api_key=api_key)
 
@@ -70,9 +68,7 @@ def generate_response(emotion):
         print("Claude Error:", e)
         return ("I am sorry. I cannot respond right now.")
 
-# -----------------------------
-# IMAGE CHECKS
-# -----------------------------
+# ----------- IMAGE CHECKS ----------- 
 def check_brightness(frame):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     brightness = gray.mean()
@@ -102,10 +98,7 @@ def check_face_size(face_width):
 
     return True, "OK"
 
-
-# -----------------------------
-# EMOTION DETECTION
-# -----------------------------
+# ----------- EMOTION DETECTION ----------- 
 def detect_emotion():
     camera = cv2.VideoCapture(0)
 
@@ -113,9 +106,7 @@ def detect_emotion():
         print("Could not open camera.")
         return "unknown", False
 
-    detector = FER(mtcnn=True)
-    # If Raspberry Pi struggles use instead:
-    # detector = FER()
+    detector = FER()
 
     speak("Hello. Please stand in front of the camera at arm's length so I can analyze your facial expression.")
 
@@ -172,9 +163,7 @@ def detect_emotion():
                         current_second = max(0, int(CAPTURE_DELAY - elapsed) + 1)
                         status = (f"Capturing in {current_second}")
 
-                        # -----------------
-                        # Capture image
-                        # -----------------
+                        # ----------- Capture image ----------- 
 
                         if elapsed >= CAPTURE_DELAY:
                             speak("Picture captured.")
@@ -207,17 +196,11 @@ def detect_emotion():
 
                             print(f"Validated emotion: {emotion}")
 
-                            # -----------------
-                            # SUCCESS
-                            # -----------------
-
+                            # ----------- SUCCESS ----------- 
                             if emotion != "unknown":
                                 return emotion, True
 
-                            # -----------------
-                            # RETRY
-                            # -----------------
-
+                            # ----------- RETRY ----------- 
                             attempts += 1
 
                             speak("I am not confident enough in my analysis.")
@@ -250,9 +233,7 @@ def detect_emotion():
         camera.release()
         cv2.destroyAllWindows()
 
-# -----------------------------
-# MAIN
-# -----------------------------
+# ----------- RESULT ----------- 
 emotion, success = detect_emotion()
 
 print("\nFINAL RESULT")

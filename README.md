@@ -35,33 +35,65 @@ To maintain realistic project scope and improve system reliability, the first im
 Additional emotions may be added in future development stages if time allows.
 
 ## Hardware Used
-The robot uses the following hardware components:
+The robot uses the following hardware components (all undisclosed measurements are in centimeters):
 
-- Arduino-compatible microcontroller
-- 2 DC motors with motor driver
+-	2 Back Wheels with motor
+-	Front Wheel
+-	Lithium Battery
+-	2 Motor Drivers
+-	Power Bank
+-	Raspberry Pi 4 
+-	Sound Module Adafruit
+-	Arduino Nano
+-	Breadboard Half
+-	Pipe Base 50mm
+-	PVC Pipe 50mm
+-	2 Wooden Planks 45x45x1 
+-	4 Wooden Supporting Pieces 10x10x1
+-	4 Wooden Supporting Pieces 15x2x2
+-	Camera Webcam
+-	Speaker
+-	4 Ultrasonic Distance Sensors
+-	16 Silicone Wires connected to the Ultrasonic Distance Sensors
+-	24 Male to Female Wires from Motor Drivers to Breadboard
+-	2 Silicone Wires from Speaker to AdaFruit Sound Module
+-	4 Female to Female Wires from the AdaFruit Sound Module to the Raspberry Pi
+-	4 Silicone Wires from Motor Driver to the Lithium Battery
+-	2 Male to Male Wires from the Arduino Nano to the Breadboard
+-	USB C to USB C Raspberry Pi to the Power Bank
+-	USB A to Micro USB Arduino Nano to the Power Bank
+
+
 
 ## Pin Mapping (final version)
 
+Arduino
+
 |         Component         | Pin |
 |         ---------         | --- |
-|    Left Motor Forward     | D10 |
-|    Left Motor Backward    | D11 |
-|    Right Motor Forward    | D9  |
-|    Right Motor Backward   | D6  |
-|   Left Encoder(rotation)  | D2  |
-|  Right Encoder(rotation)  | D3  |
-|    Ultrasonic Trigger     | D4  |
-|      Ultrasonic Echo      | D13 |
-|       Start Button        | D7  |
-|   Line Sensor Most Left   | A7  |
-|  Line Sensor Center Left  | A6  |
-|  Line Sensor Right Left   | A5  |
-|  Line Sensor Left Center  | A4  |
-|  Line Sensor Right Center | A3  |
-|  Line Sensor Left Right   | A2  |
-|  Line Sensor Center Right | A1  |
-|   Line Sensor Most Right  | A0  |
-|       Gripper Servo       | D12 |
+|    Left Motor Forward     | D6  |
+|    Left Motor Backward    | D9  |
+|    Right Motor Forward    | D3  |
+|    Right Motor Backward   | D5  |
+|  Front Ultrasonic Trigger | D8  |
+|   Front Ultrasonic Echo   | D12 |
+|  Right Ultrasonic Trigger | D2  |
+|   Right Ultrasonic Echo   | D10 |
+|  Back Ultrasonic Trigger  | D4  |
+|   Back Ultrasonic Echo    | D13 |
+|  Left Ultrasonic Trigger  | D7  |
+|    Left Ultrasonic Echo   | D11 |
+
+Raspberry Pi
+
+|         Component         | Pin |
+|         ---------         | --- |
+|          2-5VDC           | P2  |
+|          Ground           | P6  |
+|         Audio In+         | P12 |
+|         Audio In-         | P14 |
+|         Speaker+          | VO+ |
+|         Speaker-          | VO- |
 
 ## Proposed System Architecture
 The project follows a dual-controller architecture:

@@ -1,0 +1,25 @@
+﻿,Step description,Hours Assigned,Corresponding Letter,Previous Steps
+,Project Plan,2,A,-
+,Technical Advisory Report,2,B,-
+,Discussion With Client,1,C,"A, B"
+,Deciding and Ordering Hardware Components,2,D,C
+,Assembling Chassis and Tracks,2,E,D
+,Install Motors and Configure the Motor Driver,6,F,D
+,Test Navigation Functions ,5,G,"E, F"
+,Install Elevated Camera Mast,2,H,G
+,Install Trigger Button,2,I,H
+,Install Camera On Mast,3,J,"H, I"
+,Configure Servo Tilt System,7,K,J
+,Install Speakers and Connect Speakers Output,5,L,J
+,Develop Python Control Program,30,M,"K, L"
+,Integrate OpenCV Camera Capture,10,N,M
+,Add Emotion Classification System,20,O,N
+,Establish Pi-Arduino Communication,5,P,O
+,Test Full State Workflow,15,Q,P
+,Improve Camera Detection Timing,10,R,P
+,Tune Movement Reliability,10,S,P
+,Correct Software Errors,10,T,P
+Optional,Custom Voice Responses,20,U,T
+,Voice Trigger System,10,V,T
+,Additional Emotions,30,W,T
+,Improved Robot Exterior Design,15,X,T

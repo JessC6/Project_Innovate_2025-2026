@@ -10,10 +10,6 @@ from dotenv import load_dotenv
 from anthropic import Anthropic
 
 # ---------- LOADING API KEY -----------
-""" 
- Each person should change this following variable to state the correct location of the 
-.env file with the api key, relative to this file. 
-"""
 load_dotenv()
 
 api_key = os.getenv("ANTHROPIC_API_KEY")
@@ -76,7 +72,7 @@ def check_brightness(frame):
     if brightness < 50:
         return False, "Too Dark"
 
-    if brightness > 220:
+    if brightness > 210:
         return False, "Too Bright"
 
     return True, "OK"
